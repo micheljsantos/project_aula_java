@@ -1,0 +1,64 @@
+package aplicacao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+import servico.Pagamentos;
+
+public class Prestadores {
+
+	public static void main(String[] args) {
+
+	Locale.setDefault(Locale.US);
+	Scanner d = new Scanner (System.in);
+	List <Pagamentos> l = new ArrayList<>();
+	Pagamentos extra = new Pagamentos();
+	System .out.print("Informe a quantidade de lançamentos: ");
+	int qto = d.nextInt();
+	
+	for(int cont = 0 ; cont < qto ; cont ++) {
+		System .out.print("ID: ");
+		Integer id = d.nextInt();
+		d.nextLine();
+		System .out.print("Nome: ");
+		String nome = d.nextLine();
+		System .out.print("Salário: ");
+		Double salario = d.nextDouble();
+		
+	    l.add(new Pagamentos(id, nome, salario));
+	}
+		
+	
+	System.out.print("Deseja depositar Porcentagem ao valor s/n ?");
+		char resposta = d.next().charAt(0);
+	
+		
+		if (resposta == 's') {
+			System.out.print("Informe o ID: ");
+			int n = d.nextInt();
+			Pagamentos p = l.stream().filter(x -> x.getId() == n).findAny().orElse(null);
+			System.out.print("Informe a Porcentagem: ");
+			double porcent = d.nextDouble();
+			p.addPorcent(porcent);
+			System.out.println("Lista de Pagamentos");
+			for(Pagamentos imp :  l) {
+				System.out.print(imp);
+			}
+		}else {
+			for(Pagamentos imp :  l) {
+				System.out.print(imp);
+				
+				
+			}
+		
+		}
+		
+			d.close();
+				
+		
+}
+}
+
+	

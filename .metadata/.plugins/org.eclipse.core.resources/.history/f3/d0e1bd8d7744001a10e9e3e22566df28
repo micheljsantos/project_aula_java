@@ -1,0 +1,39 @@
+package matrix;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		Scanner teclado = new Scanner (System.in);
+		System.out.print("Informe o tamanho: ");
+		int n1 = teclado.nextInt();
+		System.out.print("Informe a largura: ");
+		int n2 = teclado.nextInt();
+		
+		int[][] m = new int[n1][n2];
+		
+		for(int i = 0 ; i < n1 ; i ++) {
+			for(int j = 0 ; j < n2 ; j++) {
+				
+				m[i][j] = teclado.nextInt();
+				System.out.print(m[i][j] + " ");
+		}
+				}
+		
+		System.out.print("Informe um numero da matriz: ");
+		int nm = teclado.nextInt();
+		
+		for(int i = 0 ; i < m.length ; i++) {
+			for (int j = 0 ; j < m[i].length ; j++) {
+				if(m[i][j] == nm) {
+				System.out.print("Posição: " + i + ", " + j);	
+				}			
+			}
+			
+		}
+		teclado.close();
+	}
+
+}

@@ -1,0 +1,29 @@
+package programa;
+
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Scanner;
+
+class Funcionarios {
+	
+	public static void main(String[] args) {
+	
+		Locale.setDefault(Locale.US);
+		ArrayList<String> list1 = new ArrayList<>();
+		Scanner teclado = new Scanner(System.in);
+		ArrayList<Double> list2 = new ArrayList<>();
+		System.out.print("Qunatidade de lançamentos dos funcionarios: ");
+		Integer n = teclado.nextInt();
+		for (Integer cont = 0 ; cont < n ; cont ++ ) {
+			System.out.print("Nome: ");
+			teclado.nextLine();
+			list1.add(teclado.nextLine());
+			System.out.print("Salario: ");
+			list2.add(teclado.nextDouble());
+	
+		}
+		
+		teclado.close();
+		
+	}
+}

@@ -1,0 +1,60 @@
+package aplicacao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+import servico.Pagamentos;
+
+public class Prestadores {
+
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner d = new Scanner(System.in);
+
+		List<Pagamentos> l = new ArrayList<>();
+
+		System.out.print("Informe a quantidade de lançamentos: ");
+		int qto = d.nextInt();
+
+		for (int cont = 0; cont < qto; cont++) {
+			System.out.print("");
+			System.out.print("ID: ");
+			Integer id = d.nextInt();
+			d.nextLine();
+			System.out.print("");
+			System.out.print("Nome: ");
+			String nome = d.nextLine();
+			System.out.print("");
+			System.out.print("Salário: ");
+			Double salario = d.nextDouble();
+
+			l.add(new Pagamentos(id, nome, salario));
+		}
+		System.out.print("");
+		System.out.print("Digite o ID que deseja adicionar Porcentagem: ");
+		int n = d.nextInt();
+		Pagamentos p = l.stream().filter(x -> x.getId() == n).findFirst().orElse(null);
+		if (p == null) {
+			System.out.print("");
+			System.out.print("ID inexistente");
+		} else {
+			System.out.print("");
+			System.out.print("Informe a porcentagem: ");
+			Double porcent = d.nextDouble();
+			p.addPorcent(porcent);
+		}
+		System.out.println("");
+		System.out.println("Os pagamentos realizados: ");
+		System.out.println("");
+
+		for (Pagamentos x : l) {
+			System.out.print(x);
+		}
+
+		d.close();
+
+	}
+}

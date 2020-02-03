@@ -1,0 +1,30 @@
+package aplicacao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+import servico.Pagamentos;
+
+public class Prestadores {
+
+	public static void main(String[] args) {
+
+	Locale.setDefault(Locale.US);
+	Scanner d = new Scanner (System.in);
+	List <Pagamentos> l = new ArrayList<>();
+	System .out.print("Informe a quantidade de lançamentos: ");
+	int qto = d.nextInt();
+	
+	for(int cont = 0 ; cont < qto ; cont ++) {
+		Integer id = d.nextInt();
+		d.hasNextLine();
+		String nome = d.nextLine();
+		Double salario = d.nextDouble();
+	    l.add(new Pagamentos(id, nome, salario));
+	}
+	
+	d.close();
+	}
+}

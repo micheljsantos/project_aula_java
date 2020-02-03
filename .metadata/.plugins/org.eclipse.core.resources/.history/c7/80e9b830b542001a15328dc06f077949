@@ -1,0 +1,49 @@
+package banco;
+
+public class Conta {
+
+	private String nome;
+	private  int conta;
+	private double depInicial;
+	
+	public Conta() {
+		
+	}
+	public Conta(String nome, int conta, double depInicial) {
+		this.nome = nome;
+		this.conta = conta;
+		this.depInicial = depInicial;
+	}
+	
+	public Conta(String nome, int conta) {
+		this.nome = nome;
+		this.conta = conta;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getConta() {
+		return conta;
+	}
+	public double getDepInicial() {
+		return depInicial;
+	}
+	public void setDepInicial(double depInicial) {
+		this.depInicial = depInicial;
+	}
+	
+	public String toString () {
+		return "Nome: " 
+				+ nome 
+				+ ", "
+				+ "Numero da conta: " 
+				+ conta 
+				+ ", " 
+				+ "Deposito inicial: ." + String.format("R$: %.2f", depInicial);
+	}
+	
+}

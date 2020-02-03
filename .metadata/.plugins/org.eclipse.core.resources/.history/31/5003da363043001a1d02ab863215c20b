@@ -1,0 +1,40 @@
+package programa;
+
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Scanner;
+
+import funcionario.Pagamento;
+
+class Funcionarios {
+	
+	public static void main(String[] args) {
+	
+		Locale.setDefault(Locale.US);
+		Scanner teclado = new Scanner(System.in);
+		Pagamento p = new Pagamento();
+		ArrayList<String> list1 = new ArrayList<>();
+		ArrayList<Double> list2 = new ArrayList<>();
+		System.out.print("Qunatidade de lançamentos dos funcionarios: ");
+		Integer n = teclado.nextInt();
+		for (Integer cont = 0 ; cont < n ; cont ++ ) {
+			System.out.print("Nome: ");
+			teclado.nextLine();
+			list1.add(teclado.nextLine());
+			System.out.print("Salario: ");
+			list2.add(teclado.nextDouble());
+			System.out.print("Deseja adicionar a porcentagem ao salario do funcionario s/n?");
+			teclado.hasNextLine();
+			char resposta = teclado.next().charAt(0);
+		Double porcent = null;
+		if(resposta == 's') {
+			p.porcentagem(porcent);
+			 
+		}
+	
+		}
+		
+		teclado.close();
+		
+	}
+}

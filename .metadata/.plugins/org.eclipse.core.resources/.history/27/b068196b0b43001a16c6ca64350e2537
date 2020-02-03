@@ -1,0 +1,41 @@
+package aplicacao;
+
+import java.util.Scanner;
+
+import aluguel.Quartos;
+
+public class Hotel {
+
+	public static void main(String[] args) {
+
+		Scanner teclado = new Scanner(System.in);
+
+		Quartos[] v = new Quartos[10];
+		
+		System.out.print("Informe quantos quartos deseja: ");
+		int n = teclado.nextInt();
+
+		for (int c = 0; c < n; c++) {
+			
+			teclado.nextLine();
+			System.out.print("Nome: ");
+			String nome = teclado.nextLine();
+			
+			System.out.print("Email: ");
+			String email = teclado.nextLine();
+			
+			v[c] = new Quartos(nome, email);
+			
+		for (int i = 0 ; i<10 ; i++ ) {
+			System.out.print("Quarto: ");
+			int q = teclado.nextInt();
+		if (v[c] != null) {
+			System.out.println(q + " : " + v[c]);
+		}
+		}
+		}
+		teclado.close();
+	}
+}
+
+

@@ -1,0 +1,16 @@
+package servico;
+
+public class Pagamentos {
+
+	public Pagamento() {
+		private Integer id;
+		private String nome;
+		private Double salario;
+		
+	public Pagamentos() {
+		
+	}
+	
+	}
+
+}

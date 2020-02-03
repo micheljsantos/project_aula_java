@@ -1,0 +1,35 @@
+package aplicacao;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import banco.Conta;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+	Locale.setDefault(Locale.US);
+	Scanner teclado = new Scanner(System.in);
+	Conta d = new Conta();
+	System.out.print("Informe o nome: ");
+	String nome = teclado.nextLine();
+	System.out.print("Informe o numero da conta: ");
+	int conta =  teclado.nextInt();
+	System.out.print("Deseja realizar um deposito s/n ?");
+	char resposta = teclado.nextLine().charAt(0);
+	if(resposta == 's') {
+ 		System.out.print("Informe o valor: ");	
+ 		double depInicial = teclado.nextDouble();
+ 		
+ 		d = new Conta(nome, conta, depInicial);
+ 	}else 	{ 
+		d = new Conta(nome, conta); 
+ 	}
+	
+	System.out.println (d);
+	teclado.close();
+	
+	}
+
+}
